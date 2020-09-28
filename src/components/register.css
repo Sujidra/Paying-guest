@@ -1,0 +1,82 @@
+.register{
+    width: 100vw;
+    height: 100vh;
+    background: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.register_box{
+    width: 300px;
+    height: auto;
+    background: fade-out(black,0.50%);
+    display:flex;
+    flex-direction: column;
+    
+}
+.register_box h1{
+    margin: 0;
+}
+
+.title{
+    font-weight: 900;
+    font-style: italic;
+    padding-top: 25px;
+    font-size: 30px;
+    color: rgb(73, 142, 245);
+}
+.signup{
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+.loginerror{
+    margin-top: 0px;
+    color: red;
+    font-style: italic;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    margin-left: 20px;
+    margin-bottom: 15px;
+    width: 85%;
+    height: 30px;
+    padding-left: 10px;;
+    border: 1px solid #cacccd;
+    margin-right: 20px;
+}
+
+.regbutton{
+    width: 80;
+    height: 35px;
+    background: rgb(73, 142, 245);
+    color:white;
+    border: none;
+    margin-left: 110px;
+    margin-bottom: 0px;
+    
+    cursor: pointer;
+}
+.account{
+    
+    margin-top: 0px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    color: white; 
+}
+.account p{
+    margin:0;
+}
+.login{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(73, 142, 245);
+}

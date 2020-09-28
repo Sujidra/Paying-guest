@@ -1,0 +1,67 @@
+{
+  "name": "paypointz",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "firebase": "^4.2.0",
+    "history": "^4.7.2",
+    "jquery": "^3.5.1",
+    "md5": "^2.3.0",
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
+    "node-sass": "^4.14.0",
+    "normalize.css": "^7.0.0",
+    "numeral": "^2.0.6",
+    "react": "^16.13.1",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-circular-progressbar": "^2.0.3",
+    "react-compound-timer": "^1.2.0",
+    "react-dates": "^12.7.0",
+    "react-dnd": "^5.0.0",
+    "react-dnd-html5-backend": "^3.0.2",
+    "react-dom": "^16.13.1",
+    "react-modal": "^2.2.2",
+    "react-multiple-image-input": "^1.0.0",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-slideshow-image": "^3.3.0",
+    "react-tag-input": "^6.4.3",
+    "react-tooltip": "^4.2.7",
+    "recharts": "^1.8.5",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^8.0.2",
+    "simple-react-calendar": "^2.2.8",
+    "style-loader": "^0.18.2",
+    "sudo": "^1.0.3",
+    "uuid": "^7.0.3",
+    "validator": "^13.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

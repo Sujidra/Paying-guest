@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web_app:
+    container_name: web_app_online
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+    - '3000:80'

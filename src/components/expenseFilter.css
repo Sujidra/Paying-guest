@@ -1,0 +1,182 @@
+.expensefilter_container{
+    padding-top: 20px;;
+    padding-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 10px;
+    
+}
+.summary{
+    font-size: 25px;
+    
+}
+
+.searchbox{
+    height: 49px;
+    background-color: #fff;
+    border: 1px solid #cacccd;
+    display: inline-block;
+    padding-left:10px;
+    font-size: 20px;
+    width: 200px;
+    
+}
+
+.sortbox{
+    height: 49px;
+    background-color: #fff;
+    border: 1px solid #cacccd;
+    display: inline-block;
+    padding-left:10px;
+    font-size: 20px;
+    width: 200px;
+    width:100px;
+}
+.box{
+    margin-left:15%;
+    width: 70%;
+    margin-right: 15%;
+    margin-bottom: 20px;
+}
+.listheading{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #cacccd ;
+    padding:0 20px;
+    background-color: hsla(0,0%,50%,.1);
+    
+}
+.listheading p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #cacccd ;
+    padding:0 20px;
+}
+.listitem{
+    margin-top:10;
+    
+}
+   
+.amount{
+    padding-top:20px ;
+    font-weight: bold;
+}
+.itemtitle{
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+div.ReactTags__tags {
+    position: relative;
+}
+
+/* Styles for the input */
+div.ReactTags__tagInput {
+    width: 200px;
+    border-radius: 2px;
+    display: inline-block;
+}
+div.ReactTags__tagInput input.ReactTags__tagInputField,
+div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
+    height: 31px;
+    margin: 0;
+    font-size: 12px;
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 0 4px;
+}
+
+/* Styles for selected tags */
+div.ReactTags__selected span.ReactTags__tag {
+    border: 1px solid #ddd;
+    background: #eee;
+    font-size: 12px;
+    display: inline-block;
+    padding: 5px;
+    margin: 0 5px;
+    cursor: move;
+    border-radius: 2px;
+}
+div.ReactTags__selected a.ReactTags__remove {
+    color: #aaa;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Styles for suggestions */
+div.ReactTags__suggestions {
+    position: absolute;
+}
+div.ReactTags__suggestions ul {
+    list-style-type: none;
+    box-shadow: .05em .01em .5em rgba(0,0,0,.2);
+    background: white;
+    width: 100%;
+}
+div.ReactTags__suggestions li {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+    margin: 0;
+}
+div.ReactTags__suggestions li mark {
+    text-decoration: underline;
+    background: none;
+    font-weight: 600;
+}
+div.ReactTags__suggestions ul li.ReactTags__activeSuggestion {
+    background: #b7cfe0;
+    cursor: pointer;
+}
+
+.img-wraps {
+    position: relative;
+    display: inline-block;
+   
+    font-size: 0;
+}
+.img-wraps .closes {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    z-index: 100;
+    background-color: #FFF;
+    padding: 4px 3px;
+    
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+   
+    text-align: center;
+    font-size: 22px;
+    line-height: 10px;
+    border-radius: 50%;
+    border:1px solid red;
+}
+.img-wraps:hover .closes {
+    opacity: 1;
+}
+
+@media only screen and (max-width:600px){
+    .expensefilter_container{
+        flex-direction: column;
+
+    }
+    .searchbox{
+        margin-bottom: 10px;
+    }
+    .sortbox{
+        margin-bottom: 10px;
+    }
+    .datebox{
+        margin-bottom: 10px;
+    }
+}
+
+

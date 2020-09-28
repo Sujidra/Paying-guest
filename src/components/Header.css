@@ -1,0 +1,49 @@
+.header{
+    background: rgb(27, 74, 134);
+    color: white;
+    display: flex;
+    padding:20px 0;
+    padding-left: 10%;
+    padding-right: 7%;
+    justify-content: space-between;
+}
+
+.headtitle{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    
+    
+}
+.logout{
+    border: none;
+    background: rgb(27, 74, 134);
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+}
+.subhead{
+    background-color:hsla(0,0%,50%,.1);
+    margin: 0;
+    padding-top:10px;
+    padding-left: 15%;
+    line-height: 1.5px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+.subhead p{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.expensebutton{
+    width: 150px;
+    height: 35px;
+    background: rgb(73, 142, 245);
+    color:white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
