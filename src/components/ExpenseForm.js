@@ -15,7 +15,6 @@ const crop = {
     width: '100'
   };
  
-let suggestions=[]
 
 const KeyCodes = {
 comma: 188,
@@ -37,7 +36,9 @@ class ExpenseForm extends React.Component{
             mindays:(props.rooms)?props.rooms.mindays:"",
             maxdays:(props.rooms)?props.rooms.maxdays:"",
             error:" ",
-            images:(props.rooms)?props.rooms.images:{}
+            images:(props.rooms)?props.rooms.images:{},
+            bookstartDate:(props.rooms)?props.rooms.bookstartDate:["0"],
+            bookendDate:(props.rooms)?props.rooms.bookendDate:["0"]
         }
     }
     
@@ -111,8 +112,8 @@ class ExpenseForm extends React.Component{
                 maxdays:this.state.maxdays,
                 images:this.state.images,
                 tags:this.state.tags,
-                bookstartDate:[],
-                bookendDate:[]
+                bookstartDate:this.state.bookstartDate,
+                bookendDate:this.state.bookendDate
             })
         }
     }

@@ -6,12 +6,14 @@ import {Route,Redirect} from "react-router-dom"
 const PublicRoute = (props)=>{
     
     return(
-        props.isauth?<Redirect to="/dashboard"/>:<Route {...props}/> 
+        props.isauth? window.sessionStorage.getItem("userType")==="owner" ? <Redirect to="/dashboard"/> :<Redirect to="/customerdashboard"/>:<Route {...props}/> 
     )
 }
 
 const mapStateToProps = (state)=>{
-    return{isauth:state.auth.auth}
+    console.log(state.auth.userType)
+    return{isauth:state.auth.auth,
+        userType:state.auth.userType}
 }
 
 export default connect(mapStateToProps)(PublicRoute)

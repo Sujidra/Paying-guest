@@ -65,7 +65,7 @@ class Register extends React.Component{
         //console.log(this.state.username)
         e.preventDefault();
         const checkEmail=validator.isEmail(this.state.email)
-        const checkMobile=this.state.mobile.length===10
+        const checkMobile=this.state.mobile.length===10 || this.state.mobile.length===11
         const un=this.state.username;
         const pw=this.state.password;
         const email=this.state.email;
@@ -88,7 +88,7 @@ class Register extends React.Component{
                             return{error:"",loading:false}
                             
                         })
-                        this.props.history.push("/login");
+                        this.props.history.push("/");
                         
                     }).catch(()=>{
                         this.setState(()=>{
@@ -150,7 +150,7 @@ class Register extends React.Component{
                         {this.state.loading && <LinearProgress/>}                      
                         <button className="regbutton" value="submit" >Register</button>
                     </form>
-                    <p className="account">Already have an account? <Link className="login" to="/login">Login</Link></p>
+                    <p className="account">Already have an account? <Link className="login" to="/">Login</Link></p>
                 
                 </div>
             </div>

@@ -11,7 +11,7 @@ const CustomerRoomDisplay =(props) =>{
     return (
         <div className="list">
             <div className="listitem">
-                <Link className="itemtitle" to ={`//customerRoomDetails`}> {props.room.name}</Link>
+                <p style={{margin:"0px"}} className="itemtitle" > {props.room.name}</p>
                 <p style={{marginBottom:"0.3rem"}}>{props.room.address}</p>
                 <p style={{margin:0}}><b>Rs.{numeral(props.room.amt/100).format('Rs0.00')}</b></p>
             </div>

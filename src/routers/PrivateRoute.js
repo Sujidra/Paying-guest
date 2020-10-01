@@ -8,7 +8,7 @@ const PrivateRoute = (props)=>{
     return(
         props.isauth?<div><Header /><Route {...props}/></div> :<Redirect to="/"/>
     )
-}
+} 
 
 const mapStateToProps = (state)=>{
     return{isauth:state.auth.auth}

@@ -7,6 +7,7 @@ import {history} from "../routers/Approuter"
 import {startSetAllRooms} from "../store/Actions/customerRoomsAction"
 import "./login.css"
 import { LinearProgress } from "@material-ui/core";
+import { Link, Redirect } from "react-router-dom";
 
 class Login extends React.Component{
     state={
@@ -70,6 +71,7 @@ class Login extends React.Component{
                         {this.state.loading && <LinearProgress/>}
                         <button /*onClick={()=>{history.push("/dashboard")}}*/ className="loginbutton" value="submit">Submit</button>
                     </form>
+                    <p className="account">Don't have an account? <Link className="login" to="/register">Register</Link></p>
                 </div>
             </div>
         )

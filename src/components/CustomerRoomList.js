@@ -12,6 +12,7 @@ import numeral from "numeral";
 import "./expenseAdd.css"
 import "./Header.css"
 import "./expenseFilter.css"
+import { LinearProgress } from "@material-ui/core";
 
 
 class CustomerRoomList extends React.Component{
@@ -30,20 +31,17 @@ onfocusChange=(focusedInput)=>{
         return(
             <div>
                 <p className="addsubhead">View Rooms</p>
-        
-                <div className="expensefilter_container">
-                    
-                </div>
-                <div className="box">
-                    <div className="listheading">
-                        <p>Rooms </p>
-                        <p>Action</p>
+                {(this.props.rooms.length===0) ? <LinearProgress/> :
+                    <div className="box">
+                        <div className="listheading">
+                            <p>Rooms </p>
+                            <p>Action</p>
+                        </div>
+                        <div>{this.props.rooms.map((room)=>{
+                            return <CustomerRoomDisplay key={room.id} room={room}  />})}
+                        </div>
                     </div>
-                    <div>{this.props.rooms.map((room)=>{
-                        return <CustomerRoomDisplay key={room.id} room={room}  />})}
-                    </div>
-                </div>
-
+                }
             </div>
     
         )

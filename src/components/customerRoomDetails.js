@@ -44,16 +44,18 @@ class RoomDetails extends React.Component{
          console.log(momentDate)
          console.log(this.props.location.state.room.bookstartDate)
          console.log(momentDate.isAfter(moment(this.props.location.state.room.bookstartDate)))
-         for(let i=0;i<this.props.location.state.room.bookstartDate.length;i++)
-         {
-             
-            if((momentDate.isAfter(moment(this.props.location.state.room.bookstartDate[i]))||momentDate.isSame(moment(this.props.location.state.room.bookstartDate[i])))&&(momentDate.isBefore(moment(this.props.location.state.room.bookendDate[i]))||momentDate.isSame(moment(this.props.location.state.room.bookendDate[i]))))
+            for(let i=0;i<this.props.location.state.room.bookstartDate.length;i++)
             {
-                return true;
-                break;
-            }
-        }
-    
+                
+               if((momentDate.isAfter(moment(this.props.location.state.room.bookstartDate[i]))||momentDate.isSame(moment(this.props.location.state.room.bookstartDate[i])))&&(momentDate.isBefore(moment(this.props.location.state.room.bookendDate[i]))||momentDate.isSame(moment(this.props.location.state.room.bookendDate[i]))))
+               {
+                   return true;
+                   break;
+               }
+           }
+       
+        
+         
       
          
      }
@@ -74,20 +76,26 @@ class RoomDetails extends React.Component{
          {
             return this.setState({rangeError:"Please select the date to book"})
          }
-         if(this.state.endDate.diff(this.state.startDate,"days")<=this.props.location.state.room.maxdays)
+         if(this.state.endDate.diff(this.state.startDate,"days")<this.props.location.state.room.maxdays)
          {
-             let s=this.props.location.state.room.bookstartDate
-             s.push(this.state.startDate.valueOf())
-             let b=this.props.location.state.room.bookendDate
-             b.push(this.state.endDate.valueOf())
-                this.setState({loading:true})
-            this.props.dispatch(starteditallRoom(this.props.location.state.room.userid,this.props.location.state.room.id,{bookstartDate:s,bookendDate:b})).then(()=>{
-                this.setState({loading:false})
-                document.getElementById("LinkSuccess").click()
-            }).catch(()=>{
-                this.setState({loading:false})
-                document.getElementById("LinkFailed").click()
-            })
+            if(this.state.endDate.diff(this.state.startDate,"days")>=this.props.location.state.room.mindays)
+             {
+                let s=this.props.location.state.room.bookstartDate?this.props.location.state.room.bookstartDate:[]
+                s.push(this.state.startDate.valueOf())
+                let b=this.props.location.state.room.bookendDate ? this.props.location.state.room.bookendDate :[]
+                b.push(this.state.endDate.valueOf())
+                   this.setState({loading:true})
+               this.props.dispatch(starteditallRoom(this.props.location.state.room.userid,this.props.location.state.room.id,{bookstartDate:s,bookendDate:b})).then(()=>{
+                   this.setState({loading:false})
+                   document.getElementById("LinkSuccess").click()
+               }).catch(()=>{
+                   this.setState({loading:false})
+                   document.getElementById("LinkFailed").click()
+               })
+            }else{
+                this.setState({rangeError:`minimum days for booking is:${this.props.location.state.room.mindays}`})
+            }
+             
          }else{
              this.setState({rangeError:`maximum days for booking is:${this.props.location.state.room.maxdays}`})
          }
@@ -137,8 +145,8 @@ class RoomDetails extends React.Component{
                 </div>
                 <div className="list" style={{paddingTop:"1rem"}}>
                     <p>{numeral(this.props.location.state.room.amt/100).format('Rs0.00')} </p>
-                    <p>{this.props.location.state.room.maxdays}</p>
                     <p>{this.props.location.state.room.mindays}</p>
+                    <p>{this.props.location.state.room.maxdays}</p>
                 </div>
                
             </div>

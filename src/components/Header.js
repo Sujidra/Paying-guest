@@ -9,17 +9,28 @@ import "./expenseFilter.css"
 
 const Header = (props) =>(
     <div className="header">
+        {window.sessionStorage.getItem("userType") === "owner"? 
         <Link class="headtitle" to="/dashboard">Guest Room Booking</Link>
+        :
+        <Link class="headtitle" to="/customerdashboard">Guest Room Booking</Link>
+        }
         <button className="logout" onClick={(e)=>{
             localStorage.setItem("id","");
             localStorage.setItem("userType","");
             window.sessionStorage.setItem("id","")
             window.sessionStorage.setItem("userType","");
             props.dispatch(Logout())
-            history.push("/login")
+            history.push("/")
             
         }}>Logout</button>
     </div>
     
 );
-export default connect()(Header);
+const mapStateToProps = (state)=>{
+    console.log(state.auth.userType)
+    return{isauth:state.auth.auth,
+        userType:state.auth.userType}
+}
+
+
+export default connect(mapStateToProps)(Header);

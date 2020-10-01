@@ -23,8 +23,8 @@ return (
         <div>
                     
             <Switch>
-                <PublicRoute path="/" component={Register} exact={true}/>
-                <PublicRoute path="/login" component={LoginPage} exact={true}/>
+                <PublicRoute path="/" component={LoginPage} exact={true}/>
+                <PublicRoute path="/register" component={Register} exact={true}/>
                 <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} exact={true}/>
                 <PrivateRoute path="/customerdashboard" component={CustomerDashboard} exact={true}/>
                 <PrivateRoute path="/customerRoomDetails" component={customerRoomDetails} exact={true}/>

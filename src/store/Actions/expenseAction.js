@@ -1,7 +1,7 @@
 import { v4 as uuid} from "uuid";
 import firebase from  "../../firebase/firebas"
 
-export const addExpense =({id,name,amt,address,mindays,maxdays,images,tags}={})=>{
+export const addExpense =({id,name,amt,address,mindays,maxdays,images,tags,bookstartDate,bookendDate}={})=>{
     return{
         type:"ADD_EXPENSE",
         id,
@@ -11,10 +11,12 @@ export const addExpense =({id,name,amt,address,mindays,maxdays,images,tags}={})=
         mindays,
         maxdays,
         images,
-        tags
+        tags,
+        bookendDate,
+        bookstartDate
     }
 }
-export const startaddexpense=({name,amt,address,mindays,maxdays,images,tags}={})=>{
+export const startaddexpense=({name,amt,address,mindays,maxdays,images,tags,bookstartDate,bookendDate}={})=>{
     const rooms={
         name,
         amt,
@@ -22,7 +24,9 @@ export const startaddexpense=({name,amt,address,mindays,maxdays,images,tags}={})
         mindays,
         maxdays,
         images,
-        tags
+        tags,
+        bookendDate,
+        bookstartDate
     }
     return(dispatch,getState)=>{
         const uid=getState().auth.authid
@@ -83,7 +87,7 @@ export const editExpense =(id,updates) =>{
 
 export const starteditExpense =(id,updates)=>{
     return(dispatch,getState)=>{
-        const uid=getState().auth.uid
+        const uid=getState().auth.authid
         return firebase.database().ref(`users/${uid}/rooms/${id}`).update({...updates}).then(()=>{
             dispatch(editExpense(id,updates));
         })
